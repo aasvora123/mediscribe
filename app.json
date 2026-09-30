@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "medical-scribe",
-    "slug": "medical-scribe",
+    "name": "MediScribe",
+    "slug": "mediscribe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,18 +13,30 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "MediScribe records the clinical conversation to generate structured SOAP notes. Audio is never stored permanently."
+      }
     },
     "android": {
+      "package": "com.medicalscribe.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "70d0a83a-280b-401d-9914-5b64df8d451e"
+      }
     }
   }
 }
